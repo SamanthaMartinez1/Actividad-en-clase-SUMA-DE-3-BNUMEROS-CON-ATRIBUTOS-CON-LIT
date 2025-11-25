@@ -1,20 +1,23 @@
-import { LitElement, html, css } from 'lit';
 
-export class SaluNombre extends LitElement {
+import { LitElement, html, css } from "lit";
+
+export class SumarNumeros extends LitElement {
   static properties = {
-    nombre: { type: String }
+    numero1: { type: Number }, 
+    numero2: { type: Number },
+    numero3: { type: Number },
   };
 
-  constructor() {
-    super();
-    this.nombre = 'Usuario'; 
-  }
+  
 
   render() {
+    const suma = this.numero1 + this.numero2 + this.numero3;
     return html`
-      <p>Hola, soy ${this.nombre}</p>
+      <div>
+        <p>la suma de ${this.numero1} y ${this.numero2} y ${this.numero3} es: ${suma}</p>
+      </div>
     `;
   }
 }
 
-customElements.define('salu-nombre', SaluNombre);
+customElements.define("sumar-numeros", SumarNumeros);
